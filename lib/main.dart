@@ -1,4 +1,5 @@
 import 'package:final_project/core/helper_functions/on_general_routes.dart';
+import 'package:final_project/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:final_project/features/splash/presentation/views/splash_view.dart';
 import 'package:final_project/test.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class RestaurantApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: MyHomePage.routeName,
+      initialRoute: OnBoardingView.routeName,
     );
   }
 }
