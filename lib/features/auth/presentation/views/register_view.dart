@@ -1,12 +1,39 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_element
 
 import 'package:final_project/features/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 
-class RegisterView extends StatelessWidget {
+class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
   static const routeName = 'register';
+
+  @override
+  State<RegisterView> createState() => _RegisterViewState();
+}
+
+class _RegisterViewState extends State<RegisterView> {
+  String _registeredEmail = '';
+  String _registeredPassword = '';
+
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  void _saveRegisteration() {
+    String name = _nameController.text;
+    String email = _emailController.text;
+    String phone = _phoneController.text;
+    String password = _passwordController.text;
+
+    // todo
+    setState(() {
+      _registeredEmail = email;
+      _registeredPassword = password;
+    });
+    Navigator.pop(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +83,10 @@ class RegisterView extends StatelessWidget {
                     horizontal: 30,
                   ),
                   child: Center(
+                    // todo
                     child: TextField(
+                      controller: _nameController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Full Name',
                         hintStyle: TextStyle(
@@ -82,7 +112,10 @@ class RegisterView extends StatelessWidget {
                     horizontal: 30,
                   ),
                   child: Center(
+                    // todo
                     child: TextField(
+                      controller: _emailController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Email',
                         hintStyle: TextStyle(
@@ -109,7 +142,10 @@ class RegisterView extends StatelessWidget {
                     horizontal: 30,
                   ),
                   child: Center(
+                    // todo
                     child: TextField(
+                      controller: _phoneController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Ph Number',
                         hintStyle: TextStyle(
@@ -135,7 +171,11 @@ class RegisterView extends StatelessWidget {
                     horizontal: 30,
                   ),
                   child: Center(
+                    // todo
                     child: TextField(
+                      obscureText: true,
+                      controller: _passwordController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: 'Password',
                         hintStyle: TextStyle(
@@ -150,19 +190,72 @@ class RegisterView extends StatelessWidget {
               SizedBox(
                 height: 140,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Container(
-                  height: 65,
-                  decoration: BoxDecoration(
-                    color: Color(0xff26262d),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'SIGN IN',
-                      style: TextStyle(
-                        color: Colors.white,
+              // todo
+              GestureDetector(
+                onTap: () {
+                  if (_nameController.text.isNotEmpty &&
+                      _emailController.text.isNotEmpty &&
+                      _phoneController.text.isNotEmpty &&
+                      _passwordController.text.isNotEmpty) {
+                    _saveRegisteration();
+                  } else {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Theme(
+                          data: ThemeData(
+                              dialogTheme: DialogTheme(
+                            backgroundColor: Color(0xff26262d),
+                          )),
+                          child: AlertDialog(
+                            title: Text(
+                              'Error',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            content: Text(
+                              ' please fill the fields  ',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text(
+                                  'OK',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Container(
+                    height: 65,
+                    decoration: BoxDecoration(
+                      color: Color(0xff26262d),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'SIGN IN',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
