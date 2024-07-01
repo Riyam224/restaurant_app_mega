@@ -160,6 +160,24 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   fit: BoxFit.cover,
                 ),
               ),
+              Positioned(
+                child: Container(
+                  width: 400,
+                  height: 100,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, top: 100),
+                    child: Text(
+                      'Satisfy your cravings with food made to lift your mood.',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
 
@@ -170,7 +188,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             width: 200,
             color: Color(0xff151518),
             child: Image.asset(
-              'assets/images/drink1.jpg',
+              'assets/images/on_b1.jpg',
               fit: BoxFit.cover,
             ),
           )
