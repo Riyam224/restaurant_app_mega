@@ -25,7 +25,6 @@ class CategoryCartItemsView extends StatelessWidget {
     return SizedBox(
       height: 200,
       child: ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
           itemCount: items.length,
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,

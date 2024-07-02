@@ -2,6 +2,7 @@
 
 import 'package:final_project/features/home/presentation/widgets/category_cart_items_view.dart';
 import 'package:final_project/features/home/presentation/widgets/category_text_list_view.dart';
+import 'package:final_project/features/home/presentation/widgets/food_showcase_items_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -255,6 +256,10 @@ class HomeView extends StatelessWidget {
                   height: 10,
                 ),
                 CategoryTextListView(),
+                SizedBox(
+                  height: 20,
+                ),
+                FoodShowcaseItemsView(),
               ],
             ),
           ),
