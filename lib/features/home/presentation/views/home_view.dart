@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_to_list_in_spreads
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_to_list_in_spreads, sized_box_for_whitespace
 
 import 'package:final_project/features/home/presentation/widgets/category_cart_items_view.dart';
 import 'package:final_project/features/home/presentation/widgets/category_text_list_view.dart';
@@ -133,145 +133,159 @@ class HomeView extends StatelessWidget {
         ),
       ),
 
-      body: SingleChildScrollView(
+      body: CustomScrollView(
         physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-          child: Container(
-            width: double.infinity,
-            // height: 1000,
-            color: Colors.red,
-            child: Column(
-              children: [
-                // todo first row contains image text icon
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                Container(
+                  width: double.infinity,
+                  // height: 1000,
+                  // color: Colors.red,
+                  child: Column(
+                    children: [
+                      // todo first row contains image text icon
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(25),
-                              color: Colors.white,
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(25),
-                              child: Image.asset(
-                                'assets/images/user.jpg',
-                                fit: BoxFit.cover,
-                              ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    color: Colors.white,
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(25),
+                                    child: Image.asset(
+                                      'assets/images/user.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                // todo
+                                const SizedBox(width: 20),
+                                Container(
+                                    child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Deliver to',
+                                      style: TextStyle(
+                                        color: Color(0xff6c6c6e),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Lina Jung , NY',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                    )
+                                  ],
+                                )),
+                              ],
                             ),
                           ),
-                          // todo
-                          const SizedBox(width: 20),
-                          Container(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Deliver to',
-                                style: TextStyle(
-                                  color: Color(0xff6c6c6e),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 10,
-                                ),
-                              ),
-                              Text(
-                                'Lina Jung , NY',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
-                              )
-                            ],
-                          )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.notifications,
+                                color: Colors.white, size: 30),
+                          ),
                         ],
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(Icons.notifications,
-                          color: Colors.white, size: 30),
-                    ),
-                  ],
-                ),
-                // todo divider
-                SizedBox(
-                  height: 2,
-                ),
-                Divider(
-                  color: Color(0xff26262d),
-                  height: 20,
-                  thickness: 2,
-                  indent: 20,
-                  endIndent: 20,
-                ),
-                SizedBox(
-                  height: 2,
-                ),
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Color(0xff26262d),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Search',
-                          style: TextStyle(
-                            color: Colors.white,
+                      // todo divider
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Divider(
+                        color: Color(0xff26262d),
+                        height: 20,
+                        thickness: 2,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Color(0xff26262d),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Search',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.search,
+                                color: Colors.white,
+                              ),
+                            ],
                           ),
                         ),
-                        Icon(
-                          Icons.search,
-                          color: Colors.white,
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      CategoryCartItemsView(),
+                      Text(
+                        'Some of Our Menu delivered to you',
+                        style: TextStyle(
+                          color: Color(0xff5b5b5c),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      CategoryTextListView(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      FoodShowcaseItemsView(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.amber,
+                        child: Center(
+                          child: Text(
+                            'welcome',
+                            style: TextStyle(
+                              fontSize: 30,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 25,
-                ),
-                CategoryCartItemsView(),
-                Text(
-                  'Some of Our Menu delivered to you',
-                  style: TextStyle(
-                    color: Color(0xff5b5b5c),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                CategoryTextListView(),
-                SizedBox(
-                  height: 20,
-                ),
-                FoodShowcaseItemsView(),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.amber,
-                )
-              ],
+              ]),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
