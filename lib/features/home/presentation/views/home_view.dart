@@ -139,7 +139,7 @@ class HomeView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
           child: Container(
             width: double.infinity,
-            height: 800,
+            // height: 1000,
             color: Colors.red,
             child: Column(
               children: [
@@ -260,6 +260,14 @@ class HomeView extends StatelessWidget {
                   height: 20,
                 ),
                 FoodShowcaseItemsView(),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.amber,
+                )
               ],
             ),
           ),
