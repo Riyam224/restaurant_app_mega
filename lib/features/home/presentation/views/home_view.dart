@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_to_list_in_spreads
 
-import 'package:final_project/features/home/presentation/widgets/category_cart_view.dart';
+import 'package:final_project/features/home/presentation/widgets/category_cart_items_view.dart';
+import 'package:final_project/features/home/presentation/widgets/category_text_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -132,11 +133,12 @@ class HomeView extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
           child: Container(
             width: double.infinity,
-            height: 500,
+            height: 800,
             color: Colors.red,
             child: Column(
               children: [
@@ -241,6 +243,18 @@ class HomeView extends StatelessWidget {
                   height: 25,
                 ),
                 CategoryCartItemsView(),
+                Text(
+                  'Some of Our Menu delivered to you',
+                  style: TextStyle(
+                    color: Color(0xff5b5b5c),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                CategoryTextListView(),
               ],
             ),
           ),
