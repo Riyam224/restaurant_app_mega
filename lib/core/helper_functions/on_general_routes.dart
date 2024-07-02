@@ -22,7 +22,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => RegisterView());
     // todo home view
     case HomeView.routeName:
-      return MaterialPageRoute(builder: (context) => const HomeView());
+      return MaterialPageRoute(builder: (context) => HomeView());
 
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
