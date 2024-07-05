@@ -1,12 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_to_list_in_spreads, sized_box_for_whitespace
 
-import 'package:final_project/features/cart/presentation/views/cart_view.dart';
-import 'package:final_project/features/favorite_bites/presentation/views/favorite_bites_view.dart';
 import 'package:final_project/features/home/presentation/widgets/category_cart_items_view.dart';
 import 'package:final_project/features/home/presentation/widgets/category_text_list_view.dart';
 import 'package:final_project/features/home/presentation/widgets/food_showcase_items_view.dart';
-import 'package:final_project/features/payment/presentation/views/payment_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
 

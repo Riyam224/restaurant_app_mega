@@ -172,7 +172,7 @@ class BreakfastBiteViews extends StatelessWidget {
                           ),
                         ),
                       ))
-                  .toList(),
+                  ,
             ],
           ),
         ),
@@ -201,7 +201,7 @@ class BreakfastBiteViews extends StatelessWidget {
 }
 
 class BreakfastItem extends StatelessWidget {
-  BreakfastItem({
+  const BreakfastItem({
     super.key,
     required this.title,
     required this.image,

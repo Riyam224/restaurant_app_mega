@@ -1,11 +1,5 @@
 import 'package:final_project/core/helper_functions/on_general_routes.dart';
-import 'package:final_project/features/auth/presentation/views/login_view.dart';
-import 'package:final_project/features/auth/presentation/views/register_view.dart';
-import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
-import 'package:final_project/features/home/presentation/views/home_view.dart';
-import 'package:final_project/features/home/presentation/widgets/best_order_bites.dart';
-import 'package:final_project/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
