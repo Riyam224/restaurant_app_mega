@@ -1,6 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:flutter/cupertino.dart';
+import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:flutter/material.dart';
 
 class FoodShowcaseItemsView extends StatelessWidget {
@@ -8,34 +8,42 @@ class FoodShowcaseItemsView extends StatelessWidget {
 
   final List<Map<String, dynamic>> showcaseItems = [
     {
+      "id": 1,
       "image": "assets/images/appetizer1.jpg",
       "title": "Appetizer1",
     },
     {
+      "id": 2,
       "image": "assets/images/breakfast.jpg",
       "title": "Breakfast",
     },
     {
+      "id": 3,
       "image": "assets/images/drink11.jpg",
       "title": "D & smoothies",
     },
     {
+      "id": 4,
       "image": "assets/images/c7.jpg",
       "title": "Pizza",
     },
     {
+      "id": 5,
       "image": "assets/images/chicken_with_rice.jpg",
       "title": "F-chicken",
     },
     {
+      "id": 6,
       "image": "assets/images/burger1.jpg",
       "title": "Burger",
     },
     {
+      "id": 7,
       "image": "assets/images/des1.jpg",
       "title": "Dessert",
     },
     {
+      "id": 8,
       "image": "assets/images/veggi1.jpg",
       "title": "Vegetarin Bites",
     },
@@ -55,77 +63,87 @@ class FoodShowcaseItemsView extends StatelessWidget {
               mainAxisExtent: 275,
             ),
             itemBuilder: (context, index) {
+              // todo showcase items
+              // final category = showcaseItems[index];
               // todo
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
-                    width: 200,
-                    height: 275,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: const Color(0xff150500),
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          height: 150,
-                          child: ClipRRect(
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(20.0),
-                                topRight: Radius.circular(20.0),
-                                bottomLeft: Radius.circular(0.0),
-                                bottomRight: Radius.circular(0.0),
-                              ),
-                              child: Image.asset(
-                                '${showcaseItems.elementAt(index)['image']}',
-                                fit: BoxFit.cover,
-                              )),
-                        ),
-                        Container(
+                child: GestureDetector(
+                  // todo  nav to category detail page
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                        context, BreakfastBiteViews.routeName);
+                  },
+                  child: Container(
+                      width: 200,
+                      height: 275,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color(0xff150500),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
                             width: double.infinity,
-                            // TOdo inside column
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '${showcaseItems.elementAt(index)['title']}',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  const Text(
-                                    'most delicious food',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 10,
+                            height: 150,
+                            child: ClipRRect(
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(20.0),
+                                  topRight: Radius.circular(20.0),
+                                  bottomLeft: Radius.circular(0.0),
+                                  bottomRight: Radius.circular(0.0),
+                                ),
+                                child: Image.asset(
+                                  '${showcaseItems.elementAt(index)['image']}',
+                                  fit: BoxFit.cover,
+                                )),
+                          ),
+                          Container(
+                              width: double.infinity,
+                              // TOdo inside column
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '${showcaseItems.elementAt(index)['title']}',
+                                      style: TextStyle(color: Colors.white),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(0xfff37545),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Text(
-                                      'more details',
+                                    const Text(
+                                      'most delicious food',
                                       style: TextStyle(
+                                        color: Colors.white,
                                         fontSize: 10,
-                                        fontWeight: FontWeight.bold,
-                                        height: 3,
-                                        color: Colors.black,
                                       ),
                                     ),
-                                  )
-                                ],
-                              ),
-                            ))
-                      ],
-                    )),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            const Color(0xfff37545),
+                                      ),
+                                      onPressed: () {},
+                                      child: const Text(
+                                        'more details',
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.bold,
+                                          height: 3,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ))
+                        ],
+                      )),
+                ),
               );
             }),
       ),

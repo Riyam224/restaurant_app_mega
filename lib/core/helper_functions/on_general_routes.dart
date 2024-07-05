@@ -1,11 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:final_project/features/auth/presentation/views/login_view.dart';
 import 'package:final_project/features/auth/presentation/views/register_view.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
+import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
+import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
 import 'package:final_project/features/favorite_bites/presentation/views/favorite_bites_view.dart';
 import 'package:final_project/features/home/presentation/views/home_view.dart';
-import 'package:final_project/features/home/presentation/widgets/best_order_bites.dart';
-import 'package:final_project/features/home/presentation/widgets/presentation/views/payment_view.dart';
 import 'package:final_project/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:final_project/features/payment/presentation/views/payment_view.dart';
 import 'package:final_project/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +27,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     case RegisterView.routeName:
       return MaterialPageRoute(builder: (context) => RegisterView());
-    // todo home view
+
     case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => HomeView());
 
@@ -37,6 +40,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case PaymentView.routeName:
       return MaterialPageRoute(builder: (context) => PaymentView());
 
+    // todo
+
+    case BreakfastBiteViews.routeName:
+      return MaterialPageRoute(builder: (context) => BreakfastBiteViews());
+
+    case BreakfastBitesDetailsView.routeName:
+      return MaterialPageRoute(
+          builder: (context) => BreakfastBitesDetailsView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }

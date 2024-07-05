@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -7,6 +8,9 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+        body: Center(
+      child: Text('cart View'),
+    ));
   }
 }
