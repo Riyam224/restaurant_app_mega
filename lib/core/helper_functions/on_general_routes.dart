@@ -5,17 +5,21 @@ import 'package:final_project/features/auth/presentation/views/register_view.dar
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
-import 'package:final_project/features/favorite_bites/presentation/views/favorite_bites_view.dart';
 import 'package:final_project/features/home/presentation/views/home_view.dart';
 import 'package:final_project/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:final_project/features/payment/presentation/views/payment_view.dart';
 import 'package:final_project/features/payment/presentation/views/success_order_view.dart';
+import 'package:final_project/features/payment/presentation/views/track_order_view.dart';
 import 'package:final_project/features/splash/presentation/views/splash_view.dart';
+import 'package:final_project/navbar.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     // todo splash view
+
+    case MyApp.routeName:
+      return MaterialPageRoute(builder: (context) => MyApp());
 
     case SplashView.routeName:
       return MaterialPageRoute(builder: (context) => const SplashView());
@@ -32,9 +36,6 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => HomeView());
 
-    case FavoriteBitesView.routeName:
-      return MaterialPageRoute(builder: (context) => FavoriteBitesView());
-
     case CartView.routeName:
       return MaterialPageRoute(builder: (context) => CartView());
 
@@ -44,6 +45,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case SuccessOrderView.routeName:
       return MaterialPageRoute(builder: (context) => SuccessOrderView());
 
+    case OrderMap.routeName:
+      return MaterialPageRoute(builder: (context) => OrderMap());
     // todo
 
     case BreakfastBiteViews.routeName:

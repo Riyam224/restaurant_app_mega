@@ -70,18 +70,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff26262d),
-        bottomNavigationBar: const GNav(
-          gap: 8,
-          backgroundColor: Color(0xff26262d),
-          color: Color(0xffff793d),
-          tabBackgroundColor: Color.fromARGB(255, 87, 77, 72),
-          tabs: [
-            GButton(icon: Icons.home),
-            GButton(icon: Icons.favorite),
-            GButton(icon: Icons.shopping_bag),
-            GButton(icon: Icons.payment),
-          ],
-        ),
+
         // todo appbar
         appBar: AppBar(
           backgroundColor: Color(0xffff793d),

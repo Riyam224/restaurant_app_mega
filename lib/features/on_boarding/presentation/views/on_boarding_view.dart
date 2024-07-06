@@ -214,7 +214,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 },
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, 'home');
+                    Navigator.pushReplacementNamed(context, 'myApp');
                   },
                   child: Text(
                     'Skip',

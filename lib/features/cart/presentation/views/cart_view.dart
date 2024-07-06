@@ -5,7 +5,6 @@ import 'package:final_project/features/payment/presentation/views/payment_view.d
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CartView extends StatelessWidget {
   CartView({super.key});
@@ -39,18 +38,6 @@ class CartView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff26262d),
-        bottomNavigationBar: const GNav(
-          gap: 8,
-          backgroundColor: Color(0xff26262d),
-          color: Color(0xffff793d),
-          tabBackgroundColor: Color.fromARGB(255, 87, 77, 72),
-          tabs: const [
-            GButton(icon: Icons.home),
-            GButton(icon: Icons.favorite),
-            GButton(icon: Icons.shopping_bag),
-            GButton(icon: Icons.payment),
-          ],
-        ),
 
         appBar: AppBar(
           backgroundColor: const Color(0xffff793d),

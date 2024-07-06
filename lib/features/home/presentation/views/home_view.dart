@@ -3,7 +3,6 @@
 import 'package:final_project/features/home/presentation/widgets/category_cart_items_view.dart';
 import 'package:final_project/features/home/presentation/widgets/category_text_list_view.dart';
 import 'package:final_project/features/home/presentation/widgets/food_showcase_items_view.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -39,18 +38,6 @@ class HomeView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff26262d),
-        bottomNavigationBar: GNav(
-          gap: 8,
-          backgroundColor: Color(0xff26262d),
-          color: Color(0xffff793d),
-          tabBackgroundColor: Color.fromARGB(255, 87, 77, 72),
-          tabs: [
-            GButton(icon: Icons.home),
-            GButton(icon: Icons.favorite),
-            GButton(icon: Icons.shopping_bag),
-            GButton(icon: Icons.payment),
-          ],
-        ),
 
         appBar: AppBar(
           backgroundColor: Color(0xffff793d),
