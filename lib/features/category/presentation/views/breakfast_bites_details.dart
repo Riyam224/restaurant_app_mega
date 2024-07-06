@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace
+// ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace, prefer_const_constructors
 
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:flutter/material.dart';
@@ -186,7 +186,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
               vertical: 25,
             ),
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: SizedBox(
                 width: double.infinity,
                 child: Column(
@@ -292,10 +292,10 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                   ],
                                 ),
                                 // todo
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text(
+                                const Text(
                                   'This Healthy Egg with Avocado Salad is the universal delight food , gives you the energy you need .',
                                   style: TextStyle(
                                     color: Color(0xFF738189),
@@ -304,7 +304,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 25,
                                 ),
                                 //  todo
@@ -371,7 +371,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                   ],
                                 ),
 
-                                SizedBox(
+                                const SizedBox(
                                   height: 33,
                                 ),
 
