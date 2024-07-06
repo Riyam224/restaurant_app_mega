@@ -9,6 +9,7 @@ import 'package:final_project/features/favorite_bites/presentation/views/favorit
 import 'package:final_project/features/home/presentation/views/home_view.dart';
 import 'package:final_project/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:final_project/features/payment/presentation/views/payment_view.dart';
+import 'package:final_project/features/payment/presentation/views/success_order_view.dart';
 import 'package:final_project/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
@@ -39,6 +40,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     case PaymentView.routeName:
       return MaterialPageRoute(builder: (context) => PaymentView());
+
+    case SuccessOrderView.routeName:
+      return MaterialPageRoute(builder: (context) => SuccessOrderView());
 
     // todo
 

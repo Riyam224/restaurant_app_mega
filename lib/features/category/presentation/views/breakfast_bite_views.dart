@@ -158,21 +158,19 @@ class BreakfastBiteViews extends StatelessWidget {
                 ),
               ),
               // todo
-              ...categories
-                  .map((category) => ListTile(
-                        leading: Icon(
-                          category['icon'],
-                          color: Color(0xffff793d),
-                          size: 25,
-                        ),
-                        title: Text(
-                          category['name'],
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ))
-                  ,
+              ...categories.map((category) => ListTile(
+                    leading: Icon(
+                      category['icon'],
+                      color: Color(0xffff793d),
+                      size: 25,
+                    ),
+                    title: Text(
+                      category['name'],
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  )),
             ],
           ),
         ),
