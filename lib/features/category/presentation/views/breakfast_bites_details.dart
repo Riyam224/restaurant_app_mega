@@ -2,7 +2,6 @@
 
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class BreakfastBitesDetailsView extends StatelessWidget {
   BreakfastBitesDetailsView({super.key});

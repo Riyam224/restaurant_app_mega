@@ -35,162 +35,193 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         children: [
           // todo first page
           Container(
-            color: Color(0xff151518),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 16,
-              ),
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 8,
-                    child: Stack(
-                      children: [
-                        Container(
-                          color: Color(0xff151518),
+            width: double.infinity,
+            height: double.infinity,
+            //todo
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: double.infinity,
+                    height: 200,
+                    child: Center(
+                      child: Text(
+                        'Get Food Delivered \n to Your Doorstep ',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffff793d),
                         ),
-                        Positioned(
-                          top: 50,
-                          child: Container(
-                            width: 200,
-                            height: 150,
-                            child: Transform.rotate(
-                              angle: 75.00,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/pizza1.jpg',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 200,
-                          child: Container(
-                            width: 200,
-                            height: 150,
-                            child: Transform.rotate(
-                              angle: 75.00,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/pizza2.jpg',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 400,
-                          left: 100,
-                          child: Container(
-                            width: 200,
-                            height: 150,
-                            child: Transform.rotate(
-                              angle: 75.00,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/drink4.jpg',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 49,
-                          right: 4,
-                          child: Container(
-                            width: 200,
-                            height: 150,
-                            child: Transform.rotate(
-                              angle: 26.00,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/burger2.jpg',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: Center(
-                          child: Text(
-                            'Enjoy the Best food experience ever',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                            ),
-                          ),
-                        ),
-                      ))
-                ],
-              ),
-            ),
-          ),
-          // todo / page 2
-          Stack(
-            children: [
-              Container(
-                height: double.infinity,
-                child: Image.asset(
-                  'assets/images/pizza1.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned(
-                child: Container(
-                  width: 400,
-                  height: 100,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(left: 20, right: 20, top: 100),
-                    child: Text(
-                      'Satisfy your cravings with food made to lift your mood.',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    width: double.infinity,
+                    height: 250,
+                    child: Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Image.asset(
+                        'assets/images/Young man ordering food online.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: double.infinity,
+                      child: SizedBox(
+                        width: 316,
+                        height: 95,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'Our food delivery app makes it easy to order from your favorite restaurants and have your meals delivered to your doorstep.',
+                            style: TextStyle(
+                              backgroundColor: Color(0xffff793d),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      )),
+                )
+              ],
+            ),
+          ),
+
+          // todo / page 2
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            //todo
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: double.infinity,
+                    height: 200,
+                    child: Center(
+                      child: Text(
+                        'Discover New\n Restaurants and\n Cuisines with Our App',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffff793d),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    width: double.infinity,
+                    height: 250,
+                    child: Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Image.asset(
+                        'assets/images/map marker.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: double.infinity,
+                      child: SizedBox(
+                        width: 316,
+                        height: 95,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'Our food delivery app not only allows you to order from your favorite restaurants but also gives you the opportunity to discover new places to eat.',
+                            style: TextStyle(
+                              backgroundColor: Color(0xffff793d),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      )),
+                )
+              ],
+            ),
           ),
 
           // todo page3
 
           Container(
-            height: 400,
-            width: 200,
-            color: Color(0xff151518),
-            child: Image.asset(
-              'assets/images/on_b1.jpg',
-              fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+            //todo
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: double.infinity,
+                    height: 200,
+                    child: Center(
+                      child: Text(
+                        'Experience Convenient\n and Fast Food Delivery\n with Our App',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xffff793d),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    width: double.infinity,
+                    height: 250,
+                    child: Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: Image.asset(
+                        'assets/images/Food delivery.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: double.infinity,
+                      child: SizedBox(
+                        width: 316,
+                        height: 95,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'Say goodbye to waiting in line or dealing with traffic, our food delivery app will make ordering and receiving your food a breeze.',
+                            style: TextStyle(
+                              backgroundColor: Color(0xffff793d),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      )),
+                )
+              ],
             ),
-          )
+          ),
         ],
       ),
       // todo navigation bar
@@ -218,12 +249,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   },
                   child: Text(
                     'Skip',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                    ),
                   ),
                 ),
               ),
               IconButton(
-                icon: Icon(Icons.arrow_forward, color: Colors.white),
+                icon: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                  size: 30,
+                ),
                 onPressed: () {
                   _pageController.nextPage(
                     duration: Duration(milliseconds: 300),
@@ -234,7 +272,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ],
           ),
         ),
-        color: Color(0xff151518),
+        color: Colors.white,
       ),
     );
   }

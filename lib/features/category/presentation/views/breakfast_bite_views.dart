@@ -2,7 +2,6 @@
 
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class BreakfastBiteViews extends StatelessWidget {
   BreakfastBiteViews({super.key});
