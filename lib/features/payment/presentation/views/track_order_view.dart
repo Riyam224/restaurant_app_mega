@@ -163,7 +163,11 @@ class OrderMap extends StatelessWidget {
                               ),
                             ),
                             SizedBox(width: 280),
-                            Icon(Icons.location_on),
+                            Icon(
+                              Icons.location_on,
+                              size: 20,
+                              color: Color(0xFFfe7e00),
+                            ),
                           ],
                         )),
                     Positioned(
@@ -247,7 +251,7 @@ class OrderMap extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
-                          fontFamily: 'Sora',
+                          color: Color(0XFFfe7e00),
                         ),
                       ),
                       SizedBox(
@@ -277,66 +281,65 @@ class OrderMap extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 60,
-                                height: 60,
-                                child: Image.asset(
-                                    'assets/images/pay_on_delivery.png'),
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'We deliver your goodsu in shortes possible time.',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                    ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 60,
+                              height: 60,
+                              child: Image.asset(
+                                  'assets/images/pay_on_delivery.png'),
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'We deliver your goodies asap',
+                                  style: TextStyle(
+                                    fontSize: 16,
                                   ),
-                                  Text(
-                                    ' to you in the shortes possible time.',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                    ),
+                                ),
+                                Text(
+                                  ' to you in the shortes possible time.',
+                                  style: TextStyle(
+                                    fontSize: 16,
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
-                      // todo
 
+                      SizedBox(
+                        height: 20,
+                      ),
+                      // todo
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 60,
-                                height: 60,
-                                child: Image.asset('assets/images/carrier.jpg'),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
                               ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '032 2010 2211',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(30),
+                                  child:
+                                      Image.asset('assets/images/carrier.jpg')),
+                            ),
+                            Icon(Icons.call,
+                                color: Color(0xffff793d), size: 20),
+                            Text(
+                              '021 -  1002 - 1214',
+                              style: TextStyle(
+                                fontSize: 20,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

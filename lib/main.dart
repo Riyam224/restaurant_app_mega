@@ -24,7 +24,7 @@ class RestaurantApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Karla'),
       onGenerateRoute: onGenerateRoute,
-      initialRoute: OrderMap.routeName,
+      initialRoute: SplashView.routeName,
     );
   }
 }
