@@ -1,11 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_const_constructors, unnecessary_to_list_in_spreads
 
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
 import 'package:final_project/features/payment/presentation/views/success_order_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class PaymentView extends StatelessWidget {
   PaymentView({super.key});

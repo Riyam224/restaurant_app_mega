@@ -2,7 +2,6 @@
 
 import 'package:final_project/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SuccessOrderView extends StatelessWidget {
   const SuccessOrderView({super.key});

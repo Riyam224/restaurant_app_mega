@@ -1,11 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, unnecessary_to_list_in_spreads
 
-import 'package:final_project/core/models/item_model.dart';
-import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 class OrderMap extends StatelessWidget {
   OrderMap({

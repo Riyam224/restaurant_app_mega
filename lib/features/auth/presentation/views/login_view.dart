@@ -139,7 +139,8 @@ class _LoginViewState extends State<LoginView> {
               onTap: () {
                 if (_emailController.text.isNotEmpty &&
                     _passwordController.text.isNotEmpty) {
-                  Navigator.pushNamed(context, HomeView.routeName);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeView()));
                 } else {
                   showDialog(
                     context: context,
@@ -173,7 +174,7 @@ class _LoginViewState extends State<LoginView> {
                                   'OK',
                                   style: TextStyle(
                                       fontSize: 20,
-                                      color: Colors.red,
+                                      color: Colors.orange,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),

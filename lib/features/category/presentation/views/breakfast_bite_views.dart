@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers
 
 import 'package:final_project/core/models/item_model.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
@@ -69,7 +69,7 @@ class BreakfastBiteViews extends StatelessWidget {
     // todo  2
 
     Item(
-      name: 'Scrambled Eggs with Crème Fraîche',
+      name: 'Scrambled Eggs with Crème',
       imageUrl:
           'assets/images/ghk010124scrambledeggsthreeways-65942928cddc1.jpg',
       description:
@@ -385,13 +385,14 @@ class BreakfastItem extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
                     height: 45,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
                       child: Text(
                         item.name,
                         style: TextStyle(

@@ -1,10 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_const_constructors, unnecessary_to_list_in_spreads
 
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
 import 'package:final_project/features/payment/presentation/views/payment_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class CartView extends StatelessWidget {
   CartView({super.key});

@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace
+// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors_in_immutables, prefer_const_constructors
 
 import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:flutter/material.dart';

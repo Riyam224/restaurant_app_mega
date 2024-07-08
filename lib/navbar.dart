@@ -1,3 +1,6 @@
+// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_constructors
+
+import 'package:final_project/features/auth/presentation/views/register_view.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:final_project/features/home/presentation/views/home_view.dart';
@@ -14,6 +17,7 @@ class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
+    RegisterView(),
     HomeView(),
     BreakfastBiteViews(),
     CartView(),
@@ -42,6 +46,17 @@ class _MyAppState extends State<MyApp> {
                     _selectedIndex = 0;
                   });
                 },
+                child: Icon(Icons.person),
+              ),
+              label: 'User',
+            ),
+            BottomNavigationBarItem(
+              icon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 1;
+                  });
+                },
                 child: Icon(Icons.home),
               ),
               label: 'Home',
@@ -50,7 +65,7 @@ class _MyAppState extends State<MyApp> {
               icon: GestureDetector(
                 onTap: () {
                   setState(() {
-                    _selectedIndex = 1;
+                    _selectedIndex = 2;
                   });
                 },
                 child: Icon(Icons.category),
@@ -61,7 +76,7 @@ class _MyAppState extends State<MyApp> {
               icon: GestureDetector(
                 onTap: () {
                   setState(() {
-                    _selectedIndex = 2;
+                    _selectedIndex = 3;
                   });
                 },
                 child: const Icon(Icons.shopping_bag),
@@ -72,7 +87,7 @@ class _MyAppState extends State<MyApp> {
               icon: GestureDetector(
                 onTap: () {
                   setState(() {
-                    _selectedIndex = 2;
+                    _selectedIndex = 4;
                   });
                 },
                 child: const Icon(Icons.track_changes),
