@@ -8,7 +8,6 @@ import 'package:final_project/features/payment/presentation/views/payment_view.d
 import 'package:final_project/features/payment/presentation/views/success_order_view.dart';
 import 'package:final_project/features/payment/presentation/views/track_order_view.dart';
 import 'package:final_project/features/splash/presentation/views/splash_view.dart';
-import 'package:final_project/navbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {

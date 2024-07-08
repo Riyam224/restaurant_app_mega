@@ -265,10 +265,20 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                         children: const [
                                           Icon(Icons.timer),
                                           Text(
+                                            '\$2o.88  ',
+                                            style: TextStyle(
+                                              color: Color(0xFFf27545),
+                                              fontSize: 14,
+                                              fontFamily: 'Sofia Pro',
+                                              fontWeight: FontWeight.w400,
+                                              height: 0.10,
+                                            ),
+                                          ),
+                                          Text(
                                             '15 Min',
                                             style: TextStyle(
                                               color: Color(0xFF748189),
-                                              fontSize: 14,
+                                              fontSize: 12,
                                               fontFamily: 'Sofia Pro',
                                               fontWeight: FontWeight.w400,
                                               height: 0.10,

@@ -126,7 +126,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     width: double.infinity,
                     height: 250,
                     child: Padding(
-                      padding: const EdgeInsets.all(40.0),
+                      padding: const EdgeInsets.all(100.0),
                       child: Image.asset(
                         'assets/images/map marker.png',
                         fit: BoxFit.cover,

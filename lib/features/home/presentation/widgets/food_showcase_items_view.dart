@@ -3,14 +3,19 @@
 import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:flutter/material.dart';
 
-class FoodShowcaseItemsView extends StatelessWidget {
+class FoodShowcaseItemsView extends StatefulWidget {
   FoodShowcaseItemsView({super.key});
 
+  @override
+  State<FoodShowcaseItemsView> createState() => _FoodShowcaseItemsViewState();
+}
+
+class _FoodShowcaseItemsViewState extends State<FoodShowcaseItemsView> {
   final List<Map<String, dynamic>> showcaseItems = [
     {
       "id": 1,
       "image": "assets/images/appetizer1.jpg",
-      "title": "Appetizer1",
+      "title": "Appetizer",
     },
     {
       "id": 2,
@@ -47,7 +52,18 @@ class FoodShowcaseItemsView extends StatelessWidget {
       "image": "assets/images/veggi1.jpg",
       "title": "Vegetarin Bites",
     },
+    {
+      "id": 10,
+      "image": "assets/images/asian food.jpg",
+      "title": "Chinese Food",
+    },
+    {
+      "id": 10,
+      "image": "assets/images/korean food.jpg",
+      "title": "Korean Food",
+    }
   ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -68,82 +84,79 @@ class FoodShowcaseItemsView extends StatelessWidget {
               // todo
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: GestureDetector(
-                  // todo  nav to category detail page
-                  onTap: () {
-                    Navigator.pushReplacementNamed(
-                        context, BreakfastBiteViews.routeName);
-                  },
-                  child: Container(
-                      width: 200,
-                      height: 275,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color(0xff150500),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
+                child: Container(
+                    width: 200,
+                    height: 275,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: const Color(0xff150500),
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: 150,
+                          child: ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(20.0),
+                                topRight: Radius.circular(20.0),
+                                bottomLeft: Radius.circular(0.0),
+                                bottomRight: Radius.circular(0.0),
+                              ),
+                              child: Image.asset(
+                                '${showcaseItems.elementAt(index)['image']}',
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Container(
                             width: double.infinity,
-                            height: 150,
-                            child: ClipRRect(
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(20.0),
-                                  topRight: Radius.circular(20.0),
-                                  bottomLeft: Radius.circular(0.0),
-                                  bottomRight: Radius.circular(0.0),
-                                ),
-                                child: Image.asset(
-                                  '${showcaseItems.elementAt(index)['image']}',
-                                  fit: BoxFit.cover,
-                                )),
-                          ),
-                          Container(
-                              width: double.infinity,
-                              // TOdo inside column
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 10),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '${showcaseItems.elementAt(index)['title']}',
-                                      style: TextStyle(color: Colors.white),
+                            // TOdo inside column
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '${showcaseItems.elementAt(index)['title']}',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  const Text(
+                                    'most delicious food',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10,
                                     ),
-                                    const Text(
-                                      'most delicious food',
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xfff37545),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return BreakfastBiteViews();
+                                      }));
+                                    },
+                                    child: const Text(
+                                      'click here',
                                       style: TextStyle(
-                                        color: Colors.white,
                                         fontSize: 10,
+                                        fontWeight: FontWeight.bold,
+                                        height: 3,
+                                        color: Colors.black,
                                       ),
                                     ),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            const Color(0xfff37545),
-                                      ),
-                                      onPressed: () {},
-                                      child: const Text(
-                                        'more details',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.bold,
-                                          height: 3,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ))
-                        ],
-                      )),
-                ),
+                                  )
+                                ],
+                              ),
+                            ))
+                      ],
+                    )),
               );
             }),
       ),

@@ -252,7 +252,7 @@ class HomeView extends StatelessWidget {
                         Text(
                           'Some of Our Menu delivered to you',
                           style: TextStyle(
-                            color: Color(0xff5b5b5c),
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 10,
                           ),

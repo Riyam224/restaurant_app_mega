@@ -1,7 +1,6 @@
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:final_project/features/home/presentation/views/home_view.dart';
-import 'package:final_project/features/payment/presentation/views/payment_view.dart';
 import 'package:final_project/features/payment/presentation/views/track_order_view.dart';
 import 'package:flutter/material.dart';
 
