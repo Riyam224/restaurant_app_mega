@@ -4,7 +4,6 @@ import 'package:final_project/features/auth/presentation/views/login_view.dart';
 import 'package:final_project/features/auth/presentation/views/register_view.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
-import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
 import 'package:final_project/features/home/presentation/views/home_view.dart';
 import 'package:final_project/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:final_project/features/payment/presentation/views/payment_view.dart';
@@ -45,16 +44,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case SuccessOrderView.routeName:
       return MaterialPageRoute(builder: (context) => SuccessOrderView());
 
-    case OrderMap.routeName:
-      return MaterialPageRoute(builder: (context) => OrderMap());
-    // todo
-
     case BreakfastBiteViews.routeName:
       return MaterialPageRoute(builder: (context) => BreakfastBiteViews());
 
-    case BreakfastBitesDetailsView.routeName:
-      return MaterialPageRoute(
-          builder: (context) => BreakfastBitesDetailsView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }

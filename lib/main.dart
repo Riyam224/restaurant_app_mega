@@ -23,7 +23,7 @@ class RestaurantApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Karla'),
       onGenerateRoute: onGenerateRoute,
-      initialRoute: SplashView.routeName,
+      initialRoute: BreakfastBiteViews.routeName,
     );
   }
 }

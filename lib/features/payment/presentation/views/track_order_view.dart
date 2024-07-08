@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:final_project/core/models/item_model.dart';
 import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +8,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class OrderMap extends StatelessWidget {
-  OrderMap({super.key});
-
-  static const routeName = "OrderMap";
+  OrderMap({
+    super.key,
+  });
 
   final List<Map<String, dynamic>> categories = [
     {
@@ -151,16 +152,8 @@ class OrderMap extends StatelessWidget {
                         left: 16,
                         child: Row(
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return BreakfastBitesDetailsView();
-                                }));
-                              },
-                              child: Icon(
-                                Icons.arrow_back_ios_new,
-                              ),
+                            Icon(
+                              Icons.arrow_back_ios_new,
                             ),
                             SizedBox(width: 280),
                             Icon(

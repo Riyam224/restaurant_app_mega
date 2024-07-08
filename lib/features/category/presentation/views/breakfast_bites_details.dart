@@ -1,10 +1,13 @@
 // ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace, prefer_const_constructors
 
+import 'package:final_project/core/models/item_model.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:flutter/material.dart';
 
 class BreakfastBitesDetailsView extends StatelessWidget {
-  BreakfastBitesDetailsView({super.key});
+  BreakfastBitesDetailsView({super.key, required this.item});
+
+  final Item item;
 
   static const routeName = "BreakfastBitesDetails";
 
@@ -28,31 +31,6 @@ class BreakfastBitesDetailsView extends StatelessWidget {
     {
       'name': 'Payments',
       'icon': Icons.payment,
-    },
-  ];
-
-  // todo ingredient items
-
-  final List<Map<String, dynamic>> ingredients = [
-    {
-      "image": "assets/images/ingredient1.png",
-      "name": " Avocado",
-    },
-    {
-      "image": "assets/images/ingredient2.png",
-      "name": "Peanuts",
-    },
-    {
-      "image": "assets/images/ingredient3.png",
-      "name": "Red Onions",
-    },
-    {
-      "image": "assets/images/ingredient4.png",
-      "name": "Tortilla Chips",
-    },
-    {
-      "image": "assets/images/ingredient5.png",
-      "name": "Red Cabbage",
     },
   ];
 
@@ -190,7 +168,8 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                           20,
                         ),
                         child: Image.asset(
-                          'assets/images/egg_avo_sandwitch.jpg',
+                          // todo
+                          item.imageUrl,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -241,7 +220,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
+                              horizontal: 10,
                             ),
                             // todo
                             child: Column(
@@ -251,25 +230,24 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Eggs with avoca salad',
+                                      // todo
+                                      item.name,
                                       style: TextStyle(
                                         color: Color(0xFF0A2533),
                                         fontSize: 20,
-                                        fontFamily: 'Sofia Pro',
                                         fontWeight: FontWeight.w800,
                                         height: 0.06,
                                       ),
                                     ),
                                     Container(
                                       child: Row(
-                                        children: const [
+                                        children: [
                                           Icon(Icons.timer),
                                           Text(
-                                            '\$2o.88  ',
+                                            '\$${item.price.toStringAsFixed(2)} ',
                                             style: TextStyle(
                                               color: Color(0xFFf27545),
                                               fontSize: 14,
-                                              fontFamily: 'Sofia Pro',
                                               fontWeight: FontWeight.w400,
                                               height: 0.10,
                                             ),
@@ -293,8 +271,9 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                const Text(
-                                  'This Healthy Egg with Avocado Salad is the universal delight food , gives you the energy you need .',
+                                // todo
+                                Text(
+                                  item.description,
                                   style: TextStyle(
                                     color: Color(0xFF738189),
                                     fontSize: 16,
@@ -539,7 +518,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                           width: 100,
                                           height: 20,
                                           child: Text(
-                                            '6 Item',
+                                            '5 Item',
                                             style: TextStyle(
                                               color: Color(0xFF748189),
                                               fontSize: 16,
@@ -562,25 +541,32 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                       shrinkWrap: true,
                                       // physics:
                                       //     NeverScrollableScrollPhysics(),
-                                      itemCount: ingredients.length,
+                                      itemCount: item.ingredients.length,
                                       itemBuilder: (context, index) {
+                                        // todo IngredientItems
+                                        final ingredient =
+                                            item.ingredients[index];
                                         return IngredientItems(
-                                          image: ingredients[index]['image'],
-                                          name: ingredients[index]['name'],
+                                          image: ingredient.imageUrl,
+                                          name: ingredient.name,
                                         );
                                       },
                                     ),
                                   ),
                                 ),
                                 // todo
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      // todo move to cart view
-                                      Navigator.pushNamed(
-                                          context, CartView.routeName);
-                                    },
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => CartView(),
+                                      ),
+                                    );
+                                  },
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 24),
                                     child: Container(
                                         width: 500,
                                         height: 60,
@@ -604,6 +590,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                         )),
                                   ),
                                 ),
+
                                 SizedBox(
                                   height: 48,
                                 ),
@@ -705,8 +692,8 @@ class IngredientItems extends StatelessWidget {
                         name,
                         style: TextStyle(
                           color: Color(0xFF0A2533),
-                          fontSize: 12,
-                          fontFamily: 'Sofia Pro',
+                          fontSize: 20,
+                          // fontFamily: 'Sofia Pro',
                           fontWeight: FontWeight.w800,
                           height: 0.06,
                         ),
