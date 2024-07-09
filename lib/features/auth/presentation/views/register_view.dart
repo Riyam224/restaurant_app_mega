@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, unused_element, unused_field, unused_local_variable
 
 import 'package:final_project/features/auth/presentation/views/login_view.dart';
+import 'package:final_project/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -13,26 +15,55 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
-  String _registeredEmail = '';
-  String _registeredPassword = '';
-
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _isLoading = false;
 
-  void _saveRegisteration() {
-    String name = _nameController.text;
-    String email = _emailController.text;
-    String phone = _phoneController.text;
-    String password = _passwordController.text;
+  void _handleRegister() {
+    final username = _nameController.text.trim();
+    final email = _emailController.text.trim();
+    final phone = _phoneController.text.trim();
+    final password = _passwordController.text.trim();
 
-    // todo
+    if (username.isEmpty ||
+        email.isEmpty ||
+        phone.isEmpty ||
+        password.isEmpty) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('data'),
+          content: Text('Please enter your username and password.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('OK'),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
+
     setState(() {
-      _registeredEmail = email;
-      _registeredPassword = password;
+      _isLoading = true;
     });
-    Navigator.pop(context);
+
+    // Perform registration logic here
+    // (e.g., send the data to a server, validate the input, etc.)
+    Future.delayed(Duration(seconds: 2)); // Simulating a delay
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    // Navigate to the home page after successful registration
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => HomeView()),
+    );
   }
 
   @override
@@ -149,7 +180,7 @@ class _RegisterViewState extends State<RegisterView> {
                         controller: _phoneController,
                         style: TextStyle(color: Colors.white),
                         decoration: InputDecoration(
-                          hintText: 'Ph Number',
+                          hintText: 'Phone Number',
                           hintStyle: TextStyle(
                             color: Color(0xff838386),
                           ),
@@ -190,78 +221,31 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                 ),
                 SizedBox(
-                  height: 140,
+                  height: 100,
                 ),
                 // todo
                 GestureDetector(
-                  onTap: () {
-                    if (_nameController.text.isNotEmpty &&
-                        _emailController.text.isNotEmpty &&
-                        _phoneController.text.isNotEmpty &&
-                        _passwordController.text.isNotEmpty) {
-                      _saveRegisteration();
-                    } else {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return Theme(
-                            data: ThemeData(
-                                dialogTheme: DialogTheme(
-                              backgroundColor: Color(0xff26262d),
-                            )),
-                            child: AlertDialog(
-                              title: Text(
-                                'Error',
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              content: Text(
-                                ' please fill the fields  ',
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: Text(
-                                    'OK',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.red,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
+                  onTap: _isLoading ? null : _handleRegister,
+                  child: _isLoading
+                      ? CircularProgressIndicator()
+                      : Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 50),
+                          child: Container(
+                            height: 65,
+                            decoration: BoxDecoration(
+                              color: Color(0xff26262d),
+                              borderRadius: BorderRadius.circular(16),
                             ),
-                          );
-                        },
-                      );
-                    }
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Container(
-                      height: 65,
-                      decoration: BoxDecoration(
-                        color: Color(0xff26262d),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'SIGN IN',
-                          style: TextStyle(
-                            color: Colors.white,
+                            child: Center(
+                              child: Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                  ),
                 ),
                 const SizedBox(
                   height: 15,
@@ -290,7 +274,7 @@ class _RegisterViewState extends State<RegisterView> {
                         'Login',
                         style: TextStyle(
                           fontSize: 20,
-                          color: Colors.orange,
+                          color: Color(0xffff793d),
                         ),
                       ),
                     ),
