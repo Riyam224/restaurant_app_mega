@@ -419,7 +419,13 @@ class CartItem extends StatelessWidget {
                           ),
                           onPressed: () {
                             // todo
-                            Navigator.pushNamed(context, PaymentView.routeName);
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PaymentView(),
+                              ),
+                            );
                           },
                           child: Center(
                             child: Text(

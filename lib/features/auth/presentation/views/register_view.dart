@@ -84,7 +84,7 @@ class _RegisterViewState extends State<RegisterView> {
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
-                const Text('Create a new Account',
+                const Text('Register Yourself',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -254,7 +254,7 @@ class _RegisterViewState extends State<RegisterView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account ?',
+                      'Already have an account ',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -274,6 +274,7 @@ class _RegisterViewState extends State<RegisterView> {
                         'Login',
                         style: TextStyle(
                           fontSize: 20,
+                          fontWeight: FontWeight.bold,
                           color: Color(0xffff793d),
                         ),
                       ),

@@ -434,8 +434,12 @@ class CartItem extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(
-                                context, SuccessOrderView.routeName);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SuccessOrderView(),
+                              ),
+                            );
                           },
                           child: Container(
                             width: 290,

@@ -22,8 +22,10 @@ class SuccessOrderView extends StatelessWidget {
               children: [
                 TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(
-                          context, HomeView.routeName);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return HomeView();
+                      }));
                     },
                     child: Icon(
                       Icons.close,

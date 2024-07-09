@@ -1,16 +1,23 @@
-// ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace, prefer_const_constructors
+// ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace, prefer_const_constructors, unused_element, prefer_final_fields
 
 import 'package:final_project/core/models/item_model.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
 import 'package:flutter/material.dart';
 
-class BreakfastBitesDetailsView extends StatelessWidget {
+// ignore: must_be_immutable
+class BreakfastBitesDetailsView extends StatefulWidget {
   BreakfastBitesDetailsView({super.key, required this.item});
 
   final Item item;
 
   static const routeName = "BreakfastBitesDetails";
 
+  @override
+  State<BreakfastBitesDetailsView> createState() =>
+      _BreakfastBitesDetailsViewState();
+}
+
+class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
   final List<Map<String, dynamic>> categories = [
     {
       'name': 'Home',
@@ -35,13 +42,22 @@ class BreakfastBitesDetailsView extends StatelessWidget {
   ];
 
   // todo related recipes
-
   final List<String> relatedRecipes = [
     "assets/images/appetizer2.jpg",
     "assets/images/breakfast.jpg",
     "assets/images/c3.jpg",
     "assets/images/related.jpg"
   ];
+
+  // todo add to cart code
+  List<Item> cartitem = [];
+
+  void addToCart(Item item) {
+    setState(() {
+      cartitem.add(item);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -157,6 +173,33 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
+                    // todo arrow back
+
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.popAndPushNamed(
+                                context, BreakfastBitesDetailsView.routeName);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 19),
+                            child: Container(
+                              child: const Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     // todo image
                     Padding(
                       padding: const EdgeInsets.only(
@@ -169,7 +212,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                         ),
                         child: Image.asset(
                           // todo
-                          item.imageUrl,
+                          widget.item.imageUrl,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -231,10 +274,10 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                   children: [
                                     Text(
                                       // todo
-                                      item.name,
+                                      widget.item.name,
                                       style: TextStyle(
                                         color: Color(0xFF0A2533),
-                                        fontSize: 20,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.w800,
                                         height: 0.06,
                                       ),
@@ -244,7 +287,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                         children: [
                                           Icon(Icons.timer),
                                           Text(
-                                            '\$${item.price.toStringAsFixed(2)} ',
+                                            '\$${widget.item.price.toStringAsFixed(2)} ',
                                             style: TextStyle(
                                               color: Color(0xFFf27545),
                                               fontSize: 14,
@@ -273,7 +316,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                 ),
                                 // todo
                                 Text(
-                                  item.description,
+                                  widget.item.description,
                                   style: TextStyle(
                                     color: Color(0xFF738189),
                                     fontSize: 16,
@@ -541,11 +584,11 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                       shrinkWrap: true,
                                       // physics:
                                       //     NeverScrollableScrollPhysics(),
-                                      itemCount: item.ingredients.length,
+                                      itemCount: widget.item.ingredients.length,
                                       itemBuilder: (context, index) {
                                         // todo IngredientItems
                                         final ingredient =
-                                            item.ingredients[index];
+                                            widget.item.ingredients[index];
                                         return IngredientItems(
                                           image: ingredient.imageUrl,
                                           name: ingredient.name,
@@ -555,20 +598,55 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                   ),
                                 ),
                                 // todo
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => CartView(),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 24),
+                                  child: Column(
+                                    children: [
+                                      // todo
+                                      GestureDetector(
+                                        onTap: () {
+                                          // todo add to cart
+                                          addToCart(widget.item);
+                                        },
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                    builder: (context) {
+                                              return CartView();
+                                            }));
+                                          },
+                                          child: Container(
+                                            width: 250,
+                                            height: 60,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xfff37545),
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Add To Cart',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontFamily: 'Sofia Pro',
+                                                  fontWeight: FontWeight.w700,
+                                                  height: 0.08,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    );
-                                  },
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 24),
-                                    child: Container(
-                                        width: 500,
+
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      // todo
+                                      Container(
+                                        width: 250,
                                         height: 60,
                                         decoration: BoxDecoration(
                                           color: Color(0xfff37545),
@@ -577,7 +655,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                         ),
                                         child: Center(
                                           child: Text(
-                                            'Add To Cart',
+                                            'Go to Cart',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Colors.white,
@@ -587,7 +665,9 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                               height: 0.08,
                                             ),
                                           ),
-                                        )),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
 
@@ -595,6 +675,7 @@ class BreakfastBitesDetailsView extends StatelessWidget {
                                   height: 48,
                                 ),
 
+// todo related
                                 Text(
                                   'Related Recipes',
                                   style: TextStyle(

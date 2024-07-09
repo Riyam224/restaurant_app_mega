@@ -20,7 +20,6 @@ class _MyAppState extends State<MyApp> {
     RegisterView(),
     HomeView(),
     BreakfastBiteViews(),
-    CartView(),
     OrderMap(),
   ];
 

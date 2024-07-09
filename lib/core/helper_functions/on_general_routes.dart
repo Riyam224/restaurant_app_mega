@@ -35,9 +35,6 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case HomeView.routeName:
       return MaterialPageRoute(builder: (context) => HomeView());
 
-    case CartView.routeName:
-      return MaterialPageRoute(builder: (context) => CartView());
-
     case PaymentView.routeName:
       return MaterialPageRoute(builder: (context) => PaymentView());
 
