@@ -105,7 +105,7 @@ class BreakfastBiteViews extends StatelessWidget {
     // todo 3
 
     Item(
-      name: 'Sweet Potato Breakfast Burritos',
+      name: 'Sweet Potato Breakfast',
       imageUrl:
           'assets/images/sweet-potato-breakfast-burritos-64fa102ec946c.jpg',
       description: 'These are the perfect make-ahead breakfast.',
@@ -200,7 +200,7 @@ class BreakfastBiteViews extends StatelessWidget {
     // todo 6
 
     Item(
-      name: 'Blueberry-Banana-Nut Smoothie',
+      name: 'Blueberry-Banana-Nut',
       imageUrl: 'assets/images/blueberry-banana-nut-smoothie-1608662718.jpg',
       description:
           'With frozen berries and almond butter, this is like PB&J in smoothie form. Yum!',
@@ -385,10 +385,10 @@ class BreakfastItem extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 45,
+                    height: 20,
                   ),
                   Center(
                     child: Padding(
@@ -420,7 +420,7 @@ class BreakfastItem extends StatelessWidget {
                           }));
                         },
                         child: Text(
-                          'more detail',
+                          'more details',
                           style: TextStyle(
                             color: Colors.white,
                           ),

@@ -209,71 +209,77 @@ class CartItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      // color: Colors.brown,
-                      child: Image.asset(
-                        'assets/images/egg_avo_sandwitch.jpg',
-                        fit: BoxFit.cover,
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        // width: 100,
+                        height: 100,
+                        // color: Colors.brown,
+                        child: Image.asset(
+                          'assets/images/egg_avo_sandwitch.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                    Container(
-                        width: 200,
-                        height: 100,
-                        // color: const Color.fromARGB(255, 131, 48, 18),
-                        child: const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Text(
-                                'Eggs with avoca salad',
-                                style: TextStyle(
-                                  color: Color(0xff7a7a7d),
-                                  fontSize: 16,
-                                  fontFamily: 'Sofia Pro',
-                                  fontWeight: FontWeight.w800,
-                                  height: 0.06,
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                          // width: 200,
+                          height: 100,
+                          // color: const Color.fromARGB(255, 131, 48, 18),
+                          child: const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 20, right: 10),
+                                child: Text(
+                                  'Eggs with avoca salad',
+                                  style: TextStyle(
+                                    color: Color(0xff7a7a7d),
+                                    fontSize: 12,
+                                    fontFamily: 'Sofia Pro',
+                                    fontWeight: FontWeight.w800,
+                                    height: 0.06,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Text(
-                                    'Qty :  1',
-                                    style: TextStyle(
-                                      color: Color(0xff7a7a7d),
-                                      fontSize: 10,
-                                      fontFamily: 'Sofia Pro',
-                                      fontWeight: FontWeight.w800,
-                                      height: 0.06,
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Text(
+                                      'Qty :  1',
+                                      style: TextStyle(
+                                        color: Color(0xff7a7a7d),
+                                        fontSize: 10,
+                                        fontFamily: 'Sofia Pro',
+                                        fontWeight: FontWeight.w800,
+                                        height: 0.06,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Text(
-                                    '\$ 20.88',
-                                    style: TextStyle(
-                                      color: Color(0xff7a7a7d),
-                                      fontSize: 10,
-                                      fontFamily: 'Sofia Pro',
-                                      fontWeight: FontWeight.w800,
-                                      height: 0.06,
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 20),
+                                    child: Text(
+                                      '\$ 20.88',
+                                      style: TextStyle(
+                                        color: Color(0xff7a7a7d),
+                                        fontSize: 10,
+                                        fontFamily: 'Sofia Pro',
+                                        fontWeight: FontWeight.w800,
+                                        height: 0.06,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        )),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ),
                   ],
                 )
               ],

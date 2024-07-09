@@ -69,7 +69,7 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
         appBar: AppBar(
           backgroundColor: Color(0xffff793d),
           title: const Text(
-            'Restaurant |   Eggs with avoca salad',
+            'Restaurant |    meal details',
             style: TextStyle(
               fontSize: 12,
               color: Colors.white,
@@ -165,7 +165,7 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
         //  todo
         body: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 20,
+              horizontal: 10,
               vertical: 25,
             ),
             child: SingleChildScrollView(
@@ -468,7 +468,7 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 160,
+                                      width: 100,
                                       height: 60,
                                       decoration: BoxDecoration(
                                         color: Color(0xfff37545),
@@ -491,7 +491,7 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
                                       ),
                                     ),
                                     Container(
-                                      width: 160,
+                                      width: 100,
                                       height: 60,
                                       decoration: BoxDecoration(
                                         color: Color(0xff26262d),
@@ -575,7 +575,7 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
                                     ],
                                   ),
                                 ),
-
+// todo ingredients
                                 Padding(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 24, vertical: 24),
@@ -742,6 +742,7 @@ class IngredientItems extends StatelessWidget {
                       width: 60,
                       height: double.infinity,
                       child: Image.asset(
+                        // todo image
                         image,
                       ),
                     ),
@@ -752,15 +753,15 @@ class IngredientItems extends StatelessWidget {
                         style: TextStyle(
                           color: Color(0xFF0A2533),
                           fontSize: 20,
-                          // fontFamily: 'Sofia Pro',
+                          fontFamily: 'Sofia Pro',
                           fontWeight: FontWeight.w800,
                           height: 0.06,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
+                    // SizedBox(
+                    //   width: 10,
+                    // ),
                     Row(
                       children: [
                         Container(
@@ -771,17 +772,25 @@ class IngredientItems extends StatelessWidget {
                             child: Text(
                               '+',
                               style: TextStyle(
-                                fontSize: 20,
+                                color: Color(0xfff37545),
                               ),
                             ),
                           ),
                         ),
                         Text('2'),
                         Container(
-                            width: 30,
-                            height: 30,
-                            child:
-                                TextButton(onPressed: () {}, child: Text('-'))),
+                          width: 30,
+                          height: 30,
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              '-',
+                              style: TextStyle(
+                                color: Color(0xfff37545),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],
