@@ -1,7 +1,4 @@
 import 'package:final_project/core/helper_functions/on_general_routes.dart';
-import 'package:final_project/features/cart/presentation/views/cart_view.dart';
-import 'package:final_project/features/category/presentation/views/breakfast_bites_details.dart';
-import 'package:final_project/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:final_project/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 

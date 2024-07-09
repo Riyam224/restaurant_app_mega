@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last, avoid_unnecessary_containers, avoid_print, sized_box_for_whitespace
 
+import 'package:final_project/navbar.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -245,7 +246,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 },
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, 'myApp');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BottomNavBar()));
                   },
                   child: Text(
                     'Skip',

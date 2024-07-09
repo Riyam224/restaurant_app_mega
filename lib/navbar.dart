@@ -1,106 +1,122 @@
-// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors
 
 import 'package:final_project/features/auth/presentation/views/register_view.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
-import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
+import 'package:final_project/features/favorite/presentation/views/favorite_view.dart';
 import 'package:final_project/features/home/presentation/views/home_view.dart';
-import 'package:final_project/features/payment/presentation/views/track_order_view.dart';
+import 'package:final_project/features/payment/presentation/views/payment_view.dart';
 import 'package:flutter/material.dart';
 
-class MyApp extends StatefulWidget {
-  static const routeName = 'myApp';
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
+  static const routeName = 'navbar';
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class _MyAppState extends State<MyApp> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _pages = [
+class _BottomNavBarState extends State<BottomNavBar> {
+  int cuttentIndex = 2;
+  List screens = [
     RegisterView(),
+    FavoriteView(),
     HomeView(),
-    BreakfastBiteViews(),
-    OrderMap(),
+    CartView(),
+    PaymentView(),
   ];
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'My App',
-      home: Scaffold(
-        body: _pages[_selectedIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Color(0xff26262d),
-          selectedItemColor: Color(0xffff793d),
-          unselectedItemColor: Colors.grey,
-          elevation: 10,
-          currentIndex: _selectedIndex,
-          items: [
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 0;
-                  });
-                },
-                child: Icon(Icons.person),
-              ),
-              label: 'User',
-            ),
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 1;
-                  });
-                },
-                child: Icon(Icons.home),
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 2;
-                  });
-                },
-                child: Icon(Icons.category),
-              ),
-              label: 'Detail',
-            ),
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 3;
-                  });
-                },
-                child: const Icon(Icons.shopping_bag),
-              ),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 4;
-                  });
-                },
-                child: const Icon(Icons.track_changes),
-              ),
-              label: 'Track',
-            ),
-          ],
-          onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            cuttentIndex = 2;
+          });
+        },
+        shape: const CircleBorder(),
+        backgroundColor: Color(0xfff37545),
+        child: const Icon(
+          Icons.home,
+          color: Color(0xff26262d),
+          size: 35,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        elevation: 1,
+        height: 60,
+        color: Color(0xff26262d),
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 10,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  cuttentIndex = 0;
+                });
+              },
+              icon: Icon(
+                Icons.grid_view_outlined,
+                size: 30,
+                color: cuttentIndex == 0
+                    ? Color(0xffff793d)
+                    : Colors.grey.shade400,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  cuttentIndex = 1;
+                });
+              },
+              icon: Icon(
+                Icons.favorite_border,
+                size: 30,
+                color: cuttentIndex == 1
+                    ? Color(0xffff793d)
+                    : Colors.grey.shade400,
+              ),
+            ),
+            const SizedBox(
+              width: 15,
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  cuttentIndex = 3;
+                });
+              },
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                size: 30,
+                color: cuttentIndex == 3
+                    ? Color(0xffff793d)
+                    : Colors.grey.shade400,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  cuttentIndex = 4;
+                });
+              },
+              icon: Icon(
+                Icons.person,
+                size: 30,
+                color: cuttentIndex == 4
+                    ? Color(0xffff793d)
+                    : Colors.grey.shade400,
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: screens[cuttentIndex],
     );
   }
 }

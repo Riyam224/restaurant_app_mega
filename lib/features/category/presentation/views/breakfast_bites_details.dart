@@ -1,7 +1,8 @@
-// ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace, prefer_const_constructors, unused_element, prefer_final_fields
+// ignore_for_file: avoid_unnecessary_containers, unnecessary_to_list_in_spreads, sized_box_for_whitespace, prefer_const_constructors, unused_element, prefer_final_fields, prefer_const_constructors_in_immutables
 
 import 'package:final_project/core/models/item_model.dart';
 import 'package:final_project/features/cart/presentation/views/cart_view.dart';
+import 'package:final_project/features/category/presentation/views/breakfast_bite_views.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -180,7 +181,7 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
                         GestureDetector(
                           onTap: () {
                             Navigator.popAndPushNamed(
-                                context, BreakfastBitesDetailsView.routeName);
+                                context, BreakfastBiteViews.routeName);
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(left: 19),
@@ -644,29 +645,6 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
                                       SizedBox(
                                         height: 10,
                                       ),
-                                      // todo
-                                      Container(
-                                        width: 250,
-                                        height: 60,
-                                        decoration: BoxDecoration(
-                                          color: Color(0xfff37545),
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Go to Cart',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16,
-                                              fontFamily: 'Sofia Pro',
-                                              fontWeight: FontWeight.w700,
-                                              height: 0.08,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
                                     ],
                                   ),
                                 ),
@@ -674,8 +652,8 @@ class _BreakfastBitesDetailsViewState extends State<BreakfastBitesDetailsView> {
                                 SizedBox(
                                   height: 48,
                                 ),
+// todo related food
 
-// todo related
                                 Text(
                                   'Related Recipes',
                                   style: TextStyle(
